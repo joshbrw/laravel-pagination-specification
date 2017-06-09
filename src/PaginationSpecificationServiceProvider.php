@@ -27,7 +27,7 @@ class PaginationSpecificationServiceProvider extends \Illuminate\Support\Service
                 $paginationSpecification->getPerPage(),
                 $columns,
                 $paginationSpecification->getPageName(),
-                $paginationSpecification->getPerPage()
+                $paginationSpecification->getCurrentPage()
             );
         });
     }
