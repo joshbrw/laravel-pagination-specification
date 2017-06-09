@@ -1,0 +1,31 @@
+{
+    "name": "joshbrw/laravel-pagination-specification",
+    "description": "A package for consistent pagination in Laravel.",
+    "type": "library",
+    "require": {
+        "illuminate/support": "^5.4",
+        "php": "^7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joshbrw\\PaginationSpecification\\": "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Brown",
+            "email": "josh@joshbrown.me"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Joshbrw\\PaginationSpecification\\ServiceProvider"
+            ]
+        }
+    }
+}
