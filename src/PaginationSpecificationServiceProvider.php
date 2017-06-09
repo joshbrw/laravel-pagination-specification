@@ -35,7 +35,7 @@ class PaginationSpecificationServiceProvider extends \Illuminate\Support\Service
     public function provides()
     {
         return [
-            RequestPaginationSpecification::class
+            PaginationSpecification::class
         ];
     }
 }
