@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - '7.0'
+  - '7.1'
+  - nightly
+  - hhvm
+
+before_script:
+  - travis_retry composer install --no-interaction --prefer-source
+
+script: phpunit
+
+sudo: false
+
+notifications:
+  email:
+    - josh@joshbrown.me
+
+matrix:
+  allow_failures:
+    - php: hhvm
