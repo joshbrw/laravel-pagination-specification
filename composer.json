@@ -11,10 +11,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Joshbrw\\PaginationSpecification\\": "src/",
-            "Joshbrw\\PaginationSpecification\\Tests": "tests/"
+            "Joshbrw\\PaginationSpecification\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Joshbrw\\PaginationSpecification\\Tests": "tests/"
+        }
+    }
     "license": "MIT",
     "authors": [
         {
