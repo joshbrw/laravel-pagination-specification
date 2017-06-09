@@ -128,7 +128,7 @@ class RequestPaginationSpecification implements PaginationSpecification
     }
 
     /**
-     *
+     * Load in pagination data from a HTTP Request
      * @param Request $request
      * @return PaginationSpecification
      */

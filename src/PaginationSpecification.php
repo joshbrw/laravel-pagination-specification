@@ -2,6 +2,8 @@
 
 namespace Joshbrw\PaginationSpecification;
 
+use Illuminate\Http\Request;
+
 interface PaginationSpecification
 {
     /**
@@ -56,4 +58,11 @@ interface PaginationSpecification
      * @return string
      */
     public function getPageName(): string;
+
+    /**
+     * Load in pagination data from a HTTP Request
+     * @param Request $request
+     * @return PaginationSpecification
+     */
+    public function fromRequest(Request $request): PaginationSpecification;
 }
