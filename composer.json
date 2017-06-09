@@ -3,7 +3,7 @@
     "description": "A package for consistent pagination in Laravel.",
     "type": "library",
     "require": {
-        "illuminate/support": "^5.4",
+        "laravel/framework": "5.4.*|5.5.*",
         "php": "^7"
     },
     "require-dev": {
@@ -16,7 +16,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Joshbrw\\PaginationSpecification\\Tests": "tests/"
+            "Joshbrw\\PaginationSpecification\\Tests\\": "tests/"
         }
     },
     "license": "MIT",
