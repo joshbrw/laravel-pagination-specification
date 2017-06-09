@@ -22,8 +22,8 @@ class PaginationSpecificationServiceProvider extends \Illuminate\Support\Service
 
     public function boot(): void
     {
-        Builder::macro('paginateToSpecification', function (Builder $builder, RequestPaginationSpecification $paginationSpecification, $columns = ["*"]) {
-            return $builder->paginate(
+        Builder::macro('paginateToSpecification', function (RequestPaginationSpecification $paginationSpecification, $columns = ["*"]) {
+            return $this->paginate(
                 $paginationSpecification->getPerPage(),
                 $columns,
                 $paginationSpecification->getPageName(),
