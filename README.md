@@ -11,6 +11,10 @@ This object can then be passed around to methods and used for less verbose metho
     ```php
        Joshbrw\PaginationSpecification\PaginationSpecificationServiceProvider::class
     ```
+3. Optionally publish the config and change the default Per Page;
+    ```bash
+    php artisan vendor:publish --provider="Joshbrw\PaginationSpecification\PaginationSpecificationServiceProvider"
+    ```
 
 # Usage
 

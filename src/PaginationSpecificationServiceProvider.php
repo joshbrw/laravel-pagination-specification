@@ -17,11 +17,23 @@ class PaginationSpecificationServiceProvider extends \Illuminate\Support\Service
      */
     public function register(): void
     {
+        $this->mergeConfigFrom(__DIR__ .'/../config/config.php', 'pagination-specification');
+
         $this->app->bind(PaginationSpecification::class, RequestPaginationSpecification::class);
     }
 
     public function boot(): void
     {
+        $this->publishes([
+            __DIR__ .'/../config/config.php' => config_path('pagination-specification.php'),
+        ]);
+
+        $this->app->resolving(PaginationSpecification::class, function (PaginationSpecification $paginationSpecification, $app) {
+            if ($defaultPerPage = $app['config']->get('pagination-specification.default-per-page')) {
+                $paginationSpecification->setPerPage($defaultPerPage);
+            }
+        });
+
         Builder::macro('paginateToSpecification', function (RequestPaginationSpecification $paginationSpecification, $columns = ["*"]) {
             return $this->paginate(
                 $paginationSpecification->getPerPage(),
