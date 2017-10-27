@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Joshbrw\\PaginationSpecification\\ServiceProvider"
+                "Joshbrw\\PaginationSpecification\\PaginationSpecificationServiceProvider"
             ]
         }
     }
