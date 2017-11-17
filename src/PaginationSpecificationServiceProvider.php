@@ -40,7 +40,7 @@ class PaginationSpecificationServiceProvider extends \Illuminate\Support\Service
                 $columns,
                 $paginationSpecification->getPageName(),
                 $paginationSpecification->getCurrentPage()
-            );
+            )->appends($paginationSpecification->getAppends());
         });
     }
 
