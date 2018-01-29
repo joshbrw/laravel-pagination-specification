@@ -97,13 +97,24 @@ class RequestPaginationSpecification implements PaginationSpecification
         return $this;
     }
 
+    protected function getDefaultAppends()
+    {
+        $appends = [];
+
+        if ($perPage = $this->getPerPage()) {
+            $appends['per_page'] = $perPage;
+        }
+
+        return $appends;
+    }
+
     /**
      * Get the appendages.
      * @return array
      */
     public function getAppends(): array
     {
-        return $this->appends;
+        return array_merge($this->getDefaultAppends(), $this->appends);
     }
 
     /**

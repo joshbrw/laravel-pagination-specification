@@ -118,6 +118,39 @@ class RequestPaginationSpecificationTest extends TestCase
     }
 
     /** @test */
+    public function the_appends_should_contain_the_per_page_by_default()
+    {
+        $specification = $this->getSpecification();
+
+        $specification->setPerPage(10);
+
+        $this->assertSame([
+            'per_page' => 10
+        ], $specification->getAppends());
+    }
+
+    /** @test */
+    public function the_appends_should_contain_the_per_page_when_other_appends_provided()
+    {
+        $specification = $this->getSpecification();
+
+        $specification->addAppends('appendOne', 'valueOne');
+        $specification->addAppends([
+            'appendTwo' => 'valueTwo',
+            'appendThree' => 'valueThree'
+        ]);
+
+        $specification->setPerPage(15);
+
+        $this->assertSame([
+            'per_page' => 15,
+            'appendOne' => 'valueOne',
+            'appendTwo' => 'valueTwo',
+            'appendThree' => 'valueThree',
+        ], $specification->getAppends());
+    }
+
+    /** @test */
     public function adding_append_with_same_key_as_existing_should_overwrite()
     {
         $specification = $this->getSpecification();
